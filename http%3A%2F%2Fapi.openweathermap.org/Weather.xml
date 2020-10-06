@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Weather" path="/data/2.5/weather" id="a404217a-b413-41ca-9775-9f09a9d4adc2" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a404217a-b413-41ca-9775-9f09a9d4adc2fileName">Weather</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Weather" id="5a15048b-f3e3-4c78-b63c-43f57c5c944e" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>q</con:name>
+        <con:value>Miami,us</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>Miami,us</con:default>
+        <con:path xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>units</con:name>
+        <con:value>metric</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>metric</con:default>
+        <con:path xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>appid</con:name>
+        <con:value>505a0c7771de7f017fd5d17c5d9fa89a</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>505a0c7771de7f017fd5d17c5d9fa89a</con:default>
+        <con:path xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:weat="http://api.openweathermap.org/data/2.5/weather">weat:Fault</con:element>
+    </con:representation>
+    <con:request name="Request 1" id="854a592b-148d-4c41-87cb-5bece5871658" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://api.openweathermap.org</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="q" value="Miami,us"/>
+        <con:entry key="appid" value="505a0c7771de7f017fd5d17c5d9fa89a"/>
+        <con:entry key="units" value="metric"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>q</con:entry>
+        <con:entry>units</con:entry>
+        <con:entry>appid</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>
